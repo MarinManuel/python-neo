@@ -389,25 +389,25 @@ class OpenEphysBinaryRawIO(BaseRawWithBufferApiIO):
                     if "text" in info:
                         # text case
                         if info["text"].dtype.kind in ["U", "S"]:
-                            info["labels"] = np.array([e.decode('utf-8') for e in info['text']], dtype='U')
+                            info["labels"] = np.array([e.decode("utf-8") for e in info["text"]], dtype="U")
                         else:
                             info["labels"] = info["text"].astype("U")
                     elif "metadata" in info:
                         # binary case
                         if info["metadata"].dtype.kind in ["U", "S"]:
-                            info["labels"] = np.array([e.decode('utf-8') for e in info['metadata']], dtype='U')
+                            info["labels"] = np.array([e.decode("utf-8") for e in info["metadata"]], dtype="U")
                         else:
                             info["labels"] = info["metadata"].astype("U")
                     elif "channels" in info:
                         # ttl case use channels
                         if info["channels"].dtype.kind in ["U", "S"]:
-                            info["labels"] = np.array([e.decode('utf-8') for e in info['channels']], dtype='U')
+                            info["labels"] = np.array([e.decode("utf-8") for e in info["channels"]], dtype="U")
                         else:
                             info["labels"] = info["channels"].astype("U")
                     elif "states" in info:
                         # ttl case use states
                         if info["states"].dtype.kind in ["U", "S"]:
-                            info["labels"] = np.array([e.decode('utf-8') for e in info['states']], dtype='U')
+                            info["labels"] = np.array([e.decode("utf-8") for e in info["states"]], dtype="U")
                         else:
                             info["labels"] = info["states"].astype("U")
                     else:
